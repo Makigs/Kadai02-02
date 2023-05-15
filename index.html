@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Config完成図書確認</title>
+		<link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+</head>
+<body>
+	<div class="doccheck_wrap">
+		<div class="branch_id">拠点番号「<span class="branch_id_view"></span>」の完成図書確認</div>
+
+		<div class="branch_id_wrap">
+			<input type="text" class="branch_Num_Input" maxlength="4" placeholder="1234">
+			<button class="branch_id_btn">拠点番号入力<span>半角数字のみ</span></button>
+		</div>
+
+		<div class="file_read_wrap">
+			<div class="file_read">
+				<div class="file_read_title">１．SSH_Telnet接続確認</div>
+				<div class="file_reader">
+					<input type="file" class="file_reader_input" accept="text/*">
+				</div>
+				<!-- ファイル名のチェック機能を入れる -->
+			</div>
+
+
+		</div>
+	結果はこちら
+		<div class="result_no1"></div>
+
+
+
+
+	<!-- <input type="file" id="getfile" accept="text/*">
+	<div id="preview"></div> -->
+
+	</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

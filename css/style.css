@@ -1,0 +1,28 @@
+
+.doccheck_wrap{
+    padding: 10px;
+    max-width: 500px;
+    border: solid 1px;
+    margin: 5px;
+
+}
+
+.branch_id{
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+    padding: 10px 10px 30px 10px;
+
+}
+
+.branch_id_wrap{
+    padding-bottom: 20px;
+}
+
+.branch_id_btn span{
+    font-size: 5px;
+}
+
+.file_read_title{
+    padding-bottom: 10px;
+}
