@@ -24,7 +24,7 @@
 }
 
 .file_read_title{
-    padding-bottom: 10px;
+    padding-bottom: 5px;
 }
 
 .fileSelect{
@@ -35,7 +35,45 @@
     display: flex;
 }
 
-.filename{
+.border{
     width: 90%;
-    margin-left: 10px;
+    border-bottom: 1px solid;
+    margin: 0 auto 40px auto;
 }
+
+.table {
+    display:table;
+    /*隣接する要素のborderを共有*/
+    border-collapse:collapse;
+    margin-bottom: 20px;
+    width: 480px;
+    font-size: 10px;
+}
+.table .row {
+    display:table-row;
+}
+
+.table .cell {
+    display:table-cell;
+    border:#5c5b5b 1px solid; /*境界線を指定*/
+    padding: 5px;
+}
+
+.table .cell_2 {
+    display:table-cell;
+    border:#5c5b5b 1px solid; /*境界線を指定*/
+    padding: 5px;
+    width: 30px;
+}
+
+.table .cell_3 {
+    display:table-cell;
+    border:#5c5b5b 1px solid; /*境界線を指定*/
+    padding: 5px;
+    width: 120px;
+}
+
+.cell span{
+    color: rgb(247, 178, 30);
+}
+
