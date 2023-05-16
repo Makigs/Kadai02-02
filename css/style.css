@@ -26,3 +26,16 @@
 .file_read_title{
     padding-bottom: 10px;
 }
+
+.fileSelect{
+    margin: 10px;
+}
+
+.fileCheck{
+    display: flex;
+}
+
+.filename{
+    width: 90%;
+    margin-left: 10px;
+}
