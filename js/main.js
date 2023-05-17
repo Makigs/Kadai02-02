@@ -85,27 +85,140 @@ $('.file_reader_input').change(function (){
   }
 
 
+  let this_input = this;
+  
+  reader.onload = function  () {
+
+  // 1.SSH_Telnet接続確認
+    if($(this_input).hasClass("no1")){
+      let result1 = reader.result;
+      console.log(result1);
+
+      let keyword1_1 = 'SYN arrived interface GigaEthernet1.0';
+      let keyword1_2 = "ESTABLISHED";
+      // keyword1により文章を2つにわける
+      let parts1_1 = result1.split(keyword1_1);
+      // 文章が２つに分かれていた場合
+      if (parts1_1.length == 2) {
+        // 結果にOKを返す
+        $('.result_no1-1').text("OK");
+      } else {
+        // 結果にNGを返す
+        $('.result_no1-1').text("NG");
+      }
+      // keyword1_2の位置を取得(indexOfメソッド)
+      let keywordIndex = result1.indexOf(keyword1_2);
+      let finalResult = [];
+      // keyword1_2が見つかった場合のwhile文
+      while (keywordIndex >= 0) { 
+        let start = keywordIndex - 14
+        let end = keywordIndex - 12
+         // 文字列を切り出す
+        let result = result1.substring(start, end);
+        console.log(result,"keyword取得結果、２２，２３想定"); 
+        // 次のキーワードの位置を取得
+        keywordIndex = result1.indexOf(keyword1_2, keywordIndex + 1); 
+        finalResult.push(result);
+      }
+      if(finalResult.includes('22') && finalResult.includes('23')) {
+        $('.result_no1-2').text("OK");
+        $('.result_no1-3').text("OK");
+      } else {
+        $('.result_no1-2').text("NG");
+        $('.result_no1-3').text("NG");
+      }
+      
+    
+  // 2.エージング確認
+    }else if($(this_input).hasClass("no2")){
+      let result2 = reader.result;
+      console.log(result2);
+
+  // 3.キッティング後ログ確認
+    }else if($(this_input).hasClass("no3")){
+      let result3 = reader.result;
+      console.log(result3);
+
+      let keyword3_1 = 'show flash';
+      let keyword3_2 = 'SYSTEM-PRIVATE-KEY';
+
+      // keyword1により文章を2つにわける
+      let parts3_1 = result3.split(keyword3_1);
+      console.log(parts3_1);
+      console.log(parts3_1[1]);
+
+      let parts3_2 = parts3_1[1].split(keyword3_2);
+      console.log(parts3_2);
+
+      // 文章が２つに分かれていた場合
+      if (parts3_2.length == 2) {
+        // 結果にOKを返す
+        $('.result_no3-1').text("OK");
+      } else {
+        // 結果にNGを返す
+        $('.result_no3-1').text("NG");
+      }
+
+
+    }else if($(this_input).hasClass("no4")){
+      let result4 = reader.result;
+      console.log(result4);
+
+    }else if($(this_input).hasClass("no5")){
+      let result5 = reader.result;
+      console.log(result5);
+
+      let keyword5_1 = 'show version';
+      let keyword5_2 = 'Version 9.7.54M';
+      let keyword5_3 = 'S/N:';
+
+      // keyword1により文章を2つにわける
+      let parts5_1 = result5.split(keyword5_1);
+      let parts5_2 = parts5_1[1].split(keyword5_2);
+      let parts5_3 = parts5_2[1].split(keyword5_3);
+
+      let start_ver = part5_2.indexOf(keyword5_2);
+      let end_ver = ;
+
+      let result_ver = result1.substring(start, end);
+
+      // Verの取得
+      if (parts5_2.length == 2) {
+        // 結果にOKを返す
+        $('.result_no3-1').text("OK");
+      } else {
+        // 結果にNGを返す
+        $('.result_no3-1').text("NG");
+      }
+
+
+
+
+
+    }
+  }
+});
 
 
 
   //読み込み後のkeywordチェック
-  reader.onload = function  () {
-    let result = reader.result;
-    // キーワード以降のテキストを抽出
-    let keyword1 = 'SYN arrived interface GigaEthernet1.0';
-    // keyword1により文章を2つにわける
-    let parts1 = result.split(keyword1);
-    // 文章が２つに分かれていた場合
-    if (parts1.length == 2) {
-      // 結果にOKを返す
-      $('.result_no1-1').text("OK");
-    } else {
-      // 結果にNGを返す
-      $('.result_no1-1').text("NG");
-    }
-  };
+//   reader.onload = function  () {
+//     let result = reader.result;
+//     // キーワード以降のテキストを抽出
+//     let keyword1 = 'SYN arrived interface GigaEthernet1.0';
+//     // keyword1により文章を2つにわける
+//     let parts1 = result.split(keyword1);
+//     // 文章が２つに分かれていた場合
+//     if (parts1.length == 2) {
+//       // 結果にOKを返す
+//       $('.result_no1-1').text("OK");
+//     } else {
+//       // 結果にNGを返す
+//       $('.result_no1-1').text("NG");
+//     }
+//   };
 
-});
+// });
 
 
 
