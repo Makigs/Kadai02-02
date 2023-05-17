@@ -4,7 +4,12 @@
     max-width: 500px;
     border: solid 1px;
     margin: 5px;
+}
 
+.allClear{
+    display: block;
+    margin:0 10px 10px auto
+    
 }
 
 .branch_id{
@@ -59,11 +64,20 @@
     padding: 5px;
 }
 
+.table .cell_1 {
+    display:table-cell;
+    border:#5c5b5b 1px solid; /*境界線を指定*/
+    padding: 5px;
+    width: 40px;
+    font-weight: bold;
+}
+
 .table .cell_2 {
     display:table-cell;
     border:#5c5b5b 1px solid; /*境界線を指定*/
     padding: 5px;
-    width: 30px;
+    width: 40px;
+    font-weight: bold;
 }
 
 .table .cell_3 {
@@ -71,6 +85,8 @@
     border:#5c5b5b 1px solid; /*境界線を指定*/
     padding: 5px;
     width: 120px;
+    font-weight: bold;
+
 }
 
 .cell span{
