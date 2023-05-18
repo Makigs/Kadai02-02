@@ -9,11 +9,12 @@ $(".branch_id_btn").click(function(){
       flag = 1;
   }
   console.log(flag,"flagの数字");
-
-  if(flag == 1 ){ // 半角数字で入力されていない場合
+  // 半角数字で入力されていない場合
+  if(flag == 1 ){ 
       alert('半角数字のみ入力できます');
       return false;
-  }else{ // 半角数字で入力されている場合
+  // 半角数字で入力されている場合
+  }else{ 
     branchID = $(".branch_Num_Input").val();
     console.log(branchID,"拠点番号");
     $(".branch_id_view").text(branchID);
@@ -310,112 +311,4 @@ $('.file_reader_input').change(function (){
     }
   }
 });
-
-
-
-  //読み込み後のkeywordチェック
-//   reader.onload = function  () {
-//     let result = reader.result;
-//     // キーワード以降のテキストを抽出
-//     let keyword1 = 'SYN arrived interface GigaEthernet1.0';
-//     // keyword1により文章を2つにわける
-//     let parts1 = result.split(keyword1);
-//     // 文章が２つに分かれていた場合
-//     if (parts1.length == 2) {
-//       // 結果にOKを返す
-//       $('.result_no1-1').text("OK");
-//     } else {
-//       // 結果にNGを返す
-//       $('.result_no1-1').text("NG");
-//     }
-//   };
-
-// });
-
-
-
-// test記載
-// $('#getfile').change(function (){
-//   var file = this.files[0];
-//   //読み込み
-//   var reader = new FileReader();
-//   reader.readAsText(file);
-
-//   //読み込み後
-//   reader.onload = function  () {
-//     var result = reader.result;
-    
-//     // キーワード「xxx」以降のテキストを抽出
-//     var keyword1 = '-------------------- show uptime --------------------';
-//     var parts1 = result.split(keyword1);
-//     if (parts1.length > 1) {
-//       // キーワード「yyy」以前のテキストを抽出
-//       var keyword2 = '-------------------- show version --------------------';
-//       var parts2 = parts1[1].split(keyword2);
-//       if (parts2.length > 0) {
-//         $('#preview').text(parts2[0]);
-//       } else {
-//         // キーワードが見つからなかった場合は、ファイル全体を表示
-//         $('#preview').text("異なるファイルを読み込んでいます");
-//       }
-//     } else {
-//       // キーワードが見つからなかった場合は、ファイル全体を表示
-//       $('#preview').text("異なるファイルを読み込んでいます");
-//     }
-//   };
-// });
-
-
-// 試しコード
-// function handleFileChange(e) {
-//   let file = e.target.files[0];
-//   console.log(file);
-
-//   // ファイルの読み込み
-//   readFile(file);
-
-//   // ファイル情報を取得
-//   let fileInfo = getFileInfo(file);
-  
-//   // ファイル名チェック
-//   checkFileName(fileInfo.name);
-// }
-
-// function readFile(file) {
-//   let reader = new FileReader();
-//   reader.onload = function  () {
-//     checkKeyword(reader.result);
-//   };
-//   reader.readAsText(file);
-// }
-
-// function getFileInfo(file) {
-//   let fileInfo = file;
-//   let fileName = fileInfo.name;
-//   $('.filename').text(fileName);
-//   return fileInfo;
-// }
-
-// function checkFileName(fileName) {
-//   if(fileName.includes(branchID) && fileName.includes("SSH・Telnet接続確認")){
-//     console.log(branchID, "拠点番号2");
-//     $('.result_fileName').text("OK");
-//   } else {
-//     console.log(branchID, "拠点番号3");
-//     $('.result_fileName').text("NG");
-//   }
-// }
-
-// function checkKeyword(result) {
-//   let keyword1 = 'SYN arrived interface GigaEthernet1.0';
-//   let parts1 = result.split(keyword1);
-//   if (parts1.length == 2) {
-//     $('.result_no1').text("OK");
-//   } else {
-//     $('.result_no1').text("NG");
-//   }
-// }
-
-// $('.file_reader_input').change(handleFileChange);
-
 
